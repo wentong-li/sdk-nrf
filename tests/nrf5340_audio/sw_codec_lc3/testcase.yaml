@@ -1,0 +1,5 @@
+tests:
+  nrf5340_audio.sw_codec_lc3_test:
+    platform_allow: nrf5340pdk_nrf5340_cpuapp nrf5340_audio_dk_nrf5340_cpuapp
+    tags: sw_codec_lc3, nrf5340_audio_dk_tests
+    timeout: 30

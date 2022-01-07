@@ -33,13 +33,15 @@ manifest:
       url-base: https://github.com/NordicSemiconductor
     - name: memfault
       url-base: https://github.com/memfault
+    - name: bluekitchen
+      url-base: https://github.com/bluekitchen
 
   # If not otherwise specified, the projects below should be obtained
   # from the ncs remote.
   defaults:
     remote: ncs
 
-  group-filter: [-homekit, -nrf-802154, -find-my]
+  group-filter: [-homekit, -nrf-802154, -find-my, -nrf5340_audio]
 
   # "projects" is a list of git repositories which make up the NCS
   # source code.
@@ -148,6 +150,11 @@ manifest:
       revision: 185edcc4a3182bfc8f1d80b12b3468a588013a15
       groups:
       - find-my
+    - name: sdk-lc3
+      revision: 89f9e8e8661f07e920a1800e248ef36de324aa98
+      path: modules/lib/lc3
+      groups:
+      - nrf5340_audio
     # Other third-party repositories.
     - name: cmock
       path: test/cmock
@@ -173,6 +180,12 @@ manifest:
       repo-path: sdk-openthread
       path: modules/lib/openthread
       revision: 02e61a2edd80417e9b8f9a5f4c1b2dad4ac486b4
+    - name: btstack
+      path: modules/lib/btstack
+      revision: 8aee7659ad3834657f63c8f458ef08fb0e2c0059
+      remote: bluekitchen
+      groups:
+      - nrf5340_audio
 
   # West-related configuration for the nrf repository.
   self:

@@ -1,0 +1,35 @@
+---------------------------------------------------
+(c) Nordic Semiconductor ASA
+Trondheim: 2016-05-20
+
+IMPORTANT NOTE on PRELIMINARY Software versions and documents.
+
+All PRELIMINARY material loaded in this repository are NORDIC INTERNAL DOCUMENTS.
+They are shared to key customers under NDA to allow early use & evaluation.
+Applicable SOFTWARE LICENSE AGREEMENT may be found in this/the repository
+Any portion of these NORDIC INTERNAL DOCUMENTS may change without notice.
+Little or no support can be ensured prior to final version.
+---------------------------------------------------
+
+How to identify PRELIMINARY versions
+
+The Nordic Semiconductor versioning system generally includes 3 parameters
+------ MAJOR.MINOR.ID ------
+
+-- MAJOR identifies an important feature change that may involve non-backwards compatibility
+-- MINOR identifies minor feature change, keeping backwards compatibility
+-- ID normally identifies simple bug fixes
+
+
+PRELIMINARY versions can be identified with MAJOR version number lower than "1"
+For example
+0.7.1: Is a PRELIMINARY version
+0.8.4: Is a PRELIMINARY version
+1.0.0: Is an Official release
+
+
+
+
+
+
+

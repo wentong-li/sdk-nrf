@@ -1,0 +1,52 @@
+#
+# Copyright (c) 2018 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+# Kconfig - general configuration options
+
+menu "nRF5340 Audio Project"
+
+choice NRF5340_AUDIO_TRANSPORT_MODE
+	prompt "Choose BIS or CIS for ISO transport"
+	default TRANSPORT_CIS
+
+config TRANSPORT_BIS
+	select EXPERIMENTAL
+	bool "Use BIS ISO channel for audio streaming"
+
+config TRANSPORT_CIS
+	select EXPERIMENTAL
+	bool "Use CIS ISO channel for audio streaming"
+
+endchoice
+
+#----------------------------------------------------------------------------#
+rsource "src/audio/Kconfig"
+rsource "src/bluetooth/Kconfig"
+rsource "src/drivers/Kconfig"
+rsource "src/events/Kconfig"
+rsource "src/modules/Kconfig"
+rsource "src/utils/Kconfig"
+
+#----------------------------------------------------------------------------#
+menu "Logging"
+
+config LOG_MAIN_LEVEL
+	int "Log level for main file"
+	default 3
+
+config PRINT_STACK_USAGE_MS
+	depends on THREAD_ANALYZER && INIT_STACKS
+	int "Print stack usage every x milliseconds"
+	default 5000
+
+endmenu # Log levels
+
+#----------------------------------------------------------------------------#
+endmenu # nRF5340 Audio Config
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu

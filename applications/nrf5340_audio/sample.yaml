@@ -1,0 +1,11 @@
+sample:
+  name: nRF5340 Audio
+  description: LE Audio sample
+tests:
+  applications.nrf5340_audio:
+    build_only: true
+    platform_allow: nrf5340_audio_dk_nrf5340_cpuapp
+    platform_exclude: nrf5340_audio_dk_nrf5340_cpuapp_ns
+    integration_platforms:
+      - nrf5340_audio_dk_nrf5340_cpuapp
+    tags: ci_build
