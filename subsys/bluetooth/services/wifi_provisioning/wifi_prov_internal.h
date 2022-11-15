@@ -8,10 +8,10 @@
 
 #include <zephyr/types.h>
 #include <zephyr/net/buf.h>
-#include "common/proto/request.pb.h"
-#include "common/proto/response.pb.h"
-#include "common/proto/result.pb.h"
-#include "common/proto/version.pb.h"
+#include "request.pb.h"
+#include "response.pb.h"
+#include "result.pb.h"
+#include "version.pb.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -58,13 +58,13 @@ int wifi_prov_send_rsp(struct net_buf_simple *rsp);
 int wifi_prov_send_result(struct net_buf_simple *result);
 
 /**
- * @brief Initialize Bluetooth LE transport layer.
+ * @brief Initialize Wi-Fi provisioning handler.
  *
- * This will enable the BT stack and start advertisement.
+ * This will initialize provisioning state and register net_mgmt event handler.
  *
- * @return 0 if transport layer initialized successfully, negative error code otherwise.
+ * @return 0 if initialization succeeds, negative error code otherwise.
  */
-int wifi_prov_transport_layer_init(void);
+int wifi_prov_handler_init(void);
 
 #ifdef __cplusplus
 }

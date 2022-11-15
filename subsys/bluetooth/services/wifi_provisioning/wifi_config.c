@@ -8,10 +8,10 @@
 #include <zephyr/settings/settings.h>
 #include <zephyr/logging/log.h>
 
-#include "wifi_provisioning.h"
+#include <bluetooth/services/wifi_provisioning.h>
 #include "wifi_prov_internal.h"
 
-LOG_MODULE_DECLARE(wifi_prov, CONFIG_WIFI_PROVISIONING_LOG_LEVEL);
+LOG_MODULE_DECLARE(wifi_prov, CONFIG_BT_WIFI_PROVISIONING_LOG_LEVEL);
 
 /* The path to store credentials in Settings module */
 #define WIFI_CONFIG_KEY   "wifi_prov/wifi_config"

@@ -27,3 +27,5 @@ zephyr_sources_ifdef(CONFIG_BT_DDFS ddfs.c)
 zephyr_sources_ifdef(CONFIG_BT_MDS mds.c)
 add_subdirectory_ifdef(CONFIG_BT_CGMS cgms)
 add_subdirectory_ifdef(CONFIG_BT_FAST_PAIR fast_pair)
+add_subdirectory_ifdef(CONFIG_BT_WIFI_PROVISIONING wifi_provisioning)
+

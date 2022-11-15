@@ -15,10 +15,10 @@
 #include <pb_encode.h>
 #include <pb_decode.h>
 
-#include "wifi_provisioning.h"
+#include <bluetooth/services/wifi_provisioning.h>
 #include "wifi_prov_internal.h"
 
-LOG_MODULE_REGISTER(wifi_prov, CONFIG_WIFI_PROVISIONING_LOG_LEVEL);
+LOG_MODULE_REGISTER(wifi_prov, CONFIG_BT_WIFI_PROVISIONING_LOG_LEVEL);
 
 #define WIFI_PROV_MGMT_EVENTS (NET_EVENT_WIFI_SCAN_RESULT | \
 				NET_EVENT_WIFI_CONNECT_RESULT)
@@ -537,15 +537,8 @@ static void wifi_mgmt_event_handler(struct net_mgmt_event_callback *cb,
 	}
 }
 
-int wifi_prov_init(void)
+int wifi_prov_handler_init(void)
 {
-	int rc;
-
-	rc = wifi_prov_transport_layer_init();
-	if (rc != 0) {
-		LOG_WRN("Initializing transport module failed, err = %d.", rc);
-	}
-
 	net_mgmt_init_event_callback(&wifi_prov_mgmt_cb,
 				     wifi_mgmt_event_handler,
 				     WIFI_PROV_MGMT_EVENTS);
